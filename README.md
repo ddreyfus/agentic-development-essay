@@ -1,57 +1,32 @@
-<!-- @format -->
+# Document Matcher
 
-# Agentic Development Essay — Case Study Repository
+This system ingests the provided PDFs, extracts structured text data, performs similarity search, lets a user confirm the best match, generates a report, and logs audit events.
 
-This repository accompanies the essay:
+## Setup
 
-**Agentic Development Is a New Production Mode**  
-https://heterodoxity.substack.com/p/agentic-development-production-mode
+Backend:
 
-It contains the case study artifacts used to examine how agentic systems behave under different levels of specification and design constraint.
+1. `python3 -m venv .venv && source .venv/bin/activate`
+2. `pip install -r requirements.txt`
+3. `uvicorn app.main:app --reload`
 
-## Repository Structure
+Frontend (separate terminal):
 
-The `main` branch contains only this README.  
-All experimental work lives in separate branches.
+1. `cd frontend`
+2. `npm install`
+3. `npm run dev`
 
-### Branches
+The frontend runs at `http://localhost:5173` and the API at `http://localhost:8000`.
 
-- **mini_spec**  
-  Minimal upfront specification and design.  
-  The agent was given only a high-level contract and allowed to choose structure and assumptions.
+## Quick flow
 
-- **full_spec**  
-  Explicit specification, design artifacts, constraints, and validation expectations.  
-  The agent was bound to these documents as authoritative inputs.
+1. Click **Ingest PDFs**.
+2. Enter a short description and run **Find Top Matches**.
+3. Inspect a candidate and confirm the match.
+4. Generate the report and review the audit trail.
 
-Each branch is a complete, runnable version of the same system built under different control surfaces.
+Reports are written to `reports/` and the sqlite database lives at `data/app.db`.
 
-## How to Use
+## Notes
 
-To explore a run:
-
-```bash
-git checkout mini_spec
-# or
-git checkout full_spec
-```
-
-Follow the instructions in the branch to build and run the system.
-
-Comparing the two branches shows how agent behavior, architecture, drift, and convergence change as intent and constraint are made explicit.
-
-## Purpose
-
-This repository is not a product.
-It is a controlled experiment supporting the essay’s argument about:
-
-- Specification and design as control surfaces.
-- Left-shifted governance in agentic development.
-- Why agentic performance degrades with system scale.
-- How explicit intent affects convergence.
-
-The code is provided for inspection, reproduction, and critique.
-
-## License
-
-MIT — experimental and educational use only.
+See `docs/Design.md` for assumptions and design choices.

@@ -1,0 +1,40 @@
+.DS_Store
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+ENV/
+env/
+.env
+.env.*
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# App data
+data/
+reports/
+*.db
+*.sqlite
+*.sqlite3
+
+# Tooling
+.coverage
+coverage.xml
+.cache/
+.idea/
