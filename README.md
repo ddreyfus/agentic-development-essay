@@ -52,6 +52,15 @@ It is a controlled experiment supporting the essay’s argument about:
 
 The code is provided for inspection, reproduction, and critique.
 
+## Reproducing the Experiment
+
+This repository preserves the results of two agentic runs.
+To reproduce the experiment, check out either branch and treat the numbered markdown files (NN_Name.md) as the authoritative specification and design artifacts.
+
+The instruction to the agentic system was simply:
+
+> Build the system described in the numbered markdown files in this folder.
+
 ## License
 
 MIT — experimental and educational use only.
